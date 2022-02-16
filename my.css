@@ -54,12 +54,6 @@ body {
   padding: 10px 0px 5px 0px;
 }
 
-.cards {
-  width: 1150px;
-  margin: 0 auto 0;
-  border: 5px dotted red;
-}
-
 .card {
   width: 164px;
   height: 100%;
