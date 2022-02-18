@@ -1,0 +1,101 @@
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+a {
+  margin: 0;
+  font-size: 100%;
+  font-weight: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+#header {
+  height: 150px;
+  border: 1px solid black;
+  margin-bottom: 20px;
+}
+
+#content {
+  border: 1px solid black;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-start;
+}
+
+#sidebar {
+  width: 210px;
+  height: 300px;
+  border: 1px solid black;
+  margin-right: 20px;
+}
+
+#cards {
+  border: 1px solid black;
+}
+
+#footer {
+  height: 500px;
+  border: 1px solid black;
+}
+
+#nav {
+  margin-top: 20px;
+  padding: 10px 0px 5px 0px;
+}
+
+.card {
+  width: 164px;
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.card-image {
+  width: 164px;
+  height: 230px;
+}
+
+.card-text {
+  text-align: left;
+}
+
+.card-price {
+  text-align: right;
+  color: rgb(209, 59, 59);
+}
+
+.card-button {
+  float: right;
+}
+
+.no-right-margin {
+  margin-right: 0px;
+}
+
+
+li {
+  display: inline;
+  padding: 5px;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #665544;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 10px;
+  width: 100%;
+  background-color: #efefef;
+  z-index: 10;
+}
