@@ -5,97 +5,111 @@ h3,
 h4,
 p,
 a {
-  margin: 0;
-  font-size: 100%;
-  font-weight: normal;
+    margin: 0;
+    font-size: 100%;
+    font-weight: normal;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
 #header {
-  height: 150px;
-  border: 1px solid black;
-  margin-bottom: 20px;
+    height: 150px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 #content {
-  border: 1px solid black;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: flex-start;
+    border: 1px solid black;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
 }
 
 #sidebar {
-  width: 210px;
-  height: 300px;
-  border: 1px solid black;
-  margin-right: 20px;
+    width: 210px;
+    height: 300px;
+    border: 1px solid black;
+    margin-right: 20px;
 }
 
 #cards {
-  border: 1px solid black;
+    border: 1px solid black;
+    display: flex;
 }
 
 #footer {
-  height: 500px;
-  border: 1px solid black;
+    height: 200px;
+    border: 1px solid black;
 }
 
 #nav {
-  margin-top: 20px;
-  padding: 10px 0px 5px 0px;
+    margin-top: 20px;
+    padding: 10px 0px 5px 0px;
 }
 
 .card {
-  width: 164px;
-  display: inline-block;
-  margin-right: 30px;
+    width: 164px;
+    margin-right: 30px;
+}
+
+.card:hover {
+    cursor: pointer;
+    opacity: 70%;
 }
 
 .card-image {
-  width: 164px;
-  height: 230px;
+    width: 164px;
+    height: 230px;
+}
+
+.card-text-container {
+    height: 35px;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .card-text {
-  text-align: left;
+    text-align: left;
+    font-size: 15px;
 }
 
 .card-price {
-  text-align: right;
-  color: rgb(209, 59, 59);
+    text-align: right;
+    color: rgb(209, 59, 59);
 }
 
 .card-button {
-  float: right;
+    float: right;
 }
 
 .no-right-margin {
-  margin-right: 0px;
+    margin-right: 0px;
 }
 
 
-li {
-  display: inline;
-  padding: 5px;
+.nav-item {
+    display: inline;
+    padding: 5px;
 }
 
-h1 {
-  font-size: 36px;
-  font-weight: bold;
-  color: #665544;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  margin: 0px;
-  padding: 10px;
-  width: 100%;
-  background-color: #efefef;
-  z-index: 10;
+.header-text {
+    font-size: 36px;
+    font-weight: bold;
+    color: #665544;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    padding: 10px;
+    width: 100%;
+    background-color: #efefef;
+    z-index: 10;
 }
