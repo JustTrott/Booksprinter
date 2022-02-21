@@ -13,46 +13,43 @@
 </head>
 
 <body>
-    <h1 class="header-text">Booksprinter</h1>
-    <br><br><br><br>
     <header id="header">
-        <nav id="nav">
+        <a href="index.php">
+            <img src="images/logo_with_text_hor.png" alt="Booksprinter" id="header-image">
+        </a>
+        <nav class="nav">
             <ul>
                 <li class="nav-item">
-                    <a href="index.html">Home</a>
+                    <a href="index.php" class="nav-text">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="index.html">Books</a>
+                    <a href="index.php" class="nav-text">Light Novels</a>
                 </li>
                 <li class="nav-item">
-                    <a href="index.html">Services</a>
+                    <a href="index.php" class="nav-text">Manga</a>
                 </li>
                 <li class="nav-item">
-                    <a href="index.html">About</a>
+                    <a href="index.php" class="nav-text">About</a>
                 </li>
                 <li class="nav-item">
-                    <a href="index.html">Contact</a>
+                    <a href="index.php" class="nav-text">Contact</a>
                 </li>
             </ul>
         </nav>
-    </header>
-    <section id="content">
-        <aside id="sidebar">
+        <div id="reg">
             <fieldset>
-                <legend>Registration</legend>
+                <legend>Log in</legend>
                 <form action="sign up" method="POST">
-                    Login: <input type="text" name="login"><br>
-                    Password: <input type="password" name="password"><br>
-                    Gender:
-                    <select name="gender">
-                        <option value="m">Мужской</option><br>
-                        <option value="f">Женский</option><br>
-                    </select>
-                    <br></br>
+                    Username:<br> <input type="text" name="login"><br>
+                    Password:<br> <input type="password" name="password"><br>
                     <input type="submit" value="Submit"><br>
-                    To receive the newsletter in the mail: <input type="checkbox" name="send_news">
                 </form>
             </fieldset>
+        </div>
+    </header>
+    <section id="content">
+
+        <aside class="sidebar" id="genre-menu">
         </aside>
         <div id="cards">
             <a href="">
@@ -112,7 +109,27 @@
         </div>
     </section>
     <div id="footer">
-
+        <img src="images/logo_with_text.png" id="footer-image">
+        <nav class="nav">
+            <ul>
+                <li class="nav-item">
+                    <a href="index.php" class="nav-text">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php" class="nav-text">Light Novels</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php" class="nav-text">Manga</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php" class="nav-text">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php" class="nav-text">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <p id="footer-text">Made with Love❤️</p>
     </div>
     <script src="script.js"></script>
 </body>
