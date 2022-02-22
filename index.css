@@ -17,28 +17,33 @@ input {
     appearance: none;
 }
 
-a:visited {
-    text-decoration: none;
-    color: black;
+:root {
+    --main-color: white;
+    --background-color: #F6F6F9;
+    --sub-color: #002B46;
+    --main-text-color: white;
 }
 
 * {
     box-sizing: border-box;
 }
 
+
+
 body {
     font-family: 'Roboto';
-    background-color: #808DAB;
+    background-color: var(--background-color);
     font-weight: 300;
+    color: var(--main-text-color);
 }
 
 #header {
     height: 150px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #fff3b8;
+    background-color: var(--sub-color);
 }
 
 #header-image {
@@ -53,12 +58,17 @@ body {
     display: inline;
     padding: 5px;
     font-size: 24px;
-    font-weight: bold;
 }
 
 .nav-text {
     font-family: 'Roboto';
     font-weight: 300;
+    color: var(--main-text-color);
+}
+
+.nav-text:visited {
+    color: var(--main-text-color);
+    text-decoration: none;
 }
 
 #reg {
@@ -80,18 +90,30 @@ body {
     
 }
 
+.genre-item {
+    color: #1F80E8;
+}
+
+.genre-item:visited {
+    color: #1F80E8;
+}
+
 #cards {
     display: flex;
     flex-wrap: wrap;
     margin-right: 10px;
+    gap: 100px;
 }
 
 
 .card {
     width: 200px;
-    margin-right: 100px;
     position: relative;
-    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+    box-shadow: 3px 3px 5px 3px #ccc;
+    background-color: #1F80E8;
+    margin-bottom: 20px;
+    bottom: 0px;
+    transition: 0.3s;
 }
 
 .card:hover {
@@ -111,14 +133,14 @@ body {
 }
 
 .card-text {
-    color: #FFFCF0;
-    text-align: left;
+    color: var(--main-text-color);
+    text-align: center;
     font-size: 15px;
 }
 
 .card-price {
     text-align: right;
-    color: #D6C67B;
+    color: #fffb00d7;
     font-weight: bold;
 }
 
@@ -126,16 +148,12 @@ body {
     float: right;
 }
 
-.no-right-margin {
-    margin-right: 0px;
-}
-
 #footer {
     display: flex;
     height: 200px;
     justify-content: space-around;
     align-items: center;
-    background-color: #fff3b8;
+    background-color: var(--sub-color);
 }
 
 #footer-image {
@@ -146,4 +164,5 @@ body {
     font-size: 24px;
     font-family: 'Roboto';
     font-weight: bold;
+    color: var(--main-text-color);
 }

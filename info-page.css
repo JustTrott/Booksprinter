@@ -1,3 +1,4 @@
+@import url('index.css');
 body,
 h1,
 h2,
@@ -15,7 +16,7 @@ a {
 }
 
 body {
-  font-family: 'Helvetica', 'Arial', sans-serif;
+  color: black;
 }
 
 #header {
@@ -32,11 +33,6 @@ body {
   height: 300px;
   width: 100%;
   justify-content: center;
-}
-
-#footer {
-  height: 500px;
-  border: 1px solid black;
 }
 
 #nav {
