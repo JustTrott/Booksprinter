@@ -18,17 +18,14 @@ input {
 }
 
 :root {
-    --main-color: white;
-    --background-color: #89ACC0;
-    --sub-color: #00446b;
     --main-text-color: white;
+    --background-color: #b6c9d3;
+    --sub-color: #00446b;
 }
 
-* {
+*, *::before, *::after {
     box-sizing: border-box;
 }
-
-
 
 body {
     font-family: 'Roboto';
@@ -71,7 +68,7 @@ body {
     text-decoration: none;
 }
 
-#reg {
+#reg-form {
     width:210px;
 }
 
@@ -81,21 +78,51 @@ body {
     align-items: flex-start;
 }
 
-.sidebar {
-    width: 210px;
-    margin-right: 20px;
+#left-sidebar {
+    position: sticky;
+    top: 50px;
+    width: 250px;
+    background-color: #86a2b97a;
+    border-radius: 10px;
+    margin-right: 40px;
+    box-shadow: 3px 3px 5px 3px #6174857a;
+    margin-left: 100px;
 }
 
-.genre-menu {
-    
+#filter-title-box {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-top: 10px;
+    height: 30px;
+    background-color: rgba(16, 15, 71, 0.2);
+    margin-bottom: 20px;
+}
+
+#filter-title {
+    text-align: center;
+}
+
+#genre-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 15px 15px;
+}
+
+.genre-item + .genre-item {
+    margin-top: 10px;
 }
 
 .genre-item {
-    color: #1F80E8;
+    color: #20598b;
+    
 }
 
-.genre-item:visited {
-    color: #1F80E8;
+.genre-item>a {
+    color: inherit;
+}
+
+.genre-item:hover {
+    text-decoration: underline;
 }
 
 #cards {
@@ -117,7 +144,7 @@ body {
 	border-bottom-right-radius: var(--card-round-radius);
     width: 200px;
     position: relative;
-    box-shadow: 3px 3px 5px 3px #02344f;
+    box-shadow: 3px 3px 5px 3px #022a3f;
     background-color: #00446b;
     margin-bottom: 20px;
     bottom: 0px;
@@ -147,7 +174,7 @@ body {
 }
 
 .card-text {
-    color: white;
+    color: var(--main-text-color);
     text-align: center;
     font-size: 15px;
 }

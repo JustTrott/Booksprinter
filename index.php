@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-$conn = mysqli_connect("localhost", "root", "", "shop")
+$conn = mysqli_connect("localhost", "root", "", "shop");
 ?>
 
 <html>
@@ -26,34 +26,39 @@ $conn = mysqli_connect("localhost", "root", "", "shop")
                     <a href="index.php" class="nav-text">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Registration.php" class="nav-text">Light Novels</a>
+                    <a href="Registration.php" class="nav-text">Registration</a>
                 </li>
                 <li class="nav-item">
                     <a href="about.html" class="nav-text">About</a>
                 </li>
             </ul>
         </nav>
-        <div id="reg">
+        <div id="reg-form" style="display: none;">
             <fieldset>
                 <legend>Log in</legend>
                 <form action="index.php" method="POST">
                     Username:<br> <input type="text" name="login"><br>
                     Password:<br> <input type="password" name="password"><br>
-                    <input type="submit" value="Submit"><br>
+                    <input class="form-button" type="submit" value="Submit"><br>
+                    <div class="form-button" reg-button></div>
                 </form>
             </fieldset>
         </div>
+        <div id="show-login"></div>
     </header>
     <section id="content">
 
-        <aside class="sidebar" id="genre-menu">
-            <ul>
-                <li><a href="index.php?genre=Fantasy" class='genre-item'>Fantasy</a></li>
-                <li><a href="index.php?genre=Romance" class='genre-item'>Romance</a></li>
-                <li><a href="index.php?genre=Comedy" class='genre-item'>Comedy</a></li>
-                <li><a href="index.php?genre=Action" class='genre-item'>Action</a></li>
-                <li><a href="index.php?genre=Drama" class='genre-item'>Drama</a></li>
-                <li><a href="index.php?genre=Adventure" class='genre-item'>Adventure</a></li>
+        <aside id="left-sidebar">
+            <div id="filter-title-box">
+                <h3 id="filter-title">Filter by: Genre</h3>
+            </div>
+            <ul id="genre-list">
+                <li class='genre-item'><a href="index.php?genre=Fantasy" style="font-weight: <?php if(isset($_GET['genre']) && $_GET['genre'] == 'Fantasy') {echo 1000;} else {echo 300;} ?> ">Fantasy</a></li>
+                <li class='genre-item'><a href="index.php?genre=Romance" style="font-weight: <?php if(isset($_GET['genre']) && $_GET['genre'] == 'Romance') {echo 1000;} else {echo 300;} ?> ">Romance</a></li>
+                <li class='genre-item'><a href="index.php?genre=Comedy" style="font-weight: <?php if(isset($_GET['genre']) && $_GET['genre'] == 'Comedy') {echo 1000;} else {echo 300;} ?> ">Comedy</a></li>
+                <li class='genre-item'><a href="index.php?genre=Action" style="font-weight: <?php if(isset($_GET['genre']) && $_GET['genre'] == 'Action') {echo 1000;} else {echo 300;} ?> ">Action</a></li>
+                <li class='genre-item'><a href="index.php?genre=Drama" style="font-weight: <?php if(isset($_GET['genre']) && $_GET['genre'] == 'Drama') {echo 1000;} else {echo 300;} ?> ">Drama</a></li>
+                <li class='genre-item'><a href="index.php?genre=Adventure" style="font-weight: <?php if(isset($_GET['genre']) && $_GET['genre'] == 'Adventure') {echo 1000;} else {echo 300;} ?> ">Adventure</a></li>
             </ul>
         </aside>
         <div id="cards">
@@ -64,7 +69,8 @@ $conn = mysqli_connect("localhost", "root", "", "shop")
             ?>
             <a href="info-page.html?id=<?php echo $row["book_id"]; ?>">
                 <div class="card">
-                    <div class="card-image" style="background-image: url('images/covers/<?php echo $row["cover_path"]; ?>.jpg');">
+                    <div class="card-image"
+                        style="background-image: url('images/covers/<?php echo $row["cover_path"]; ?>.jpg');">
                     </div>
                     <div class="card-text-container">
                         <p class="card-text"><?php echo $row["name"]; ?></p>
