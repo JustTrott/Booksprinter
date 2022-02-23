@@ -64,7 +64,8 @@ $conn = mysqli_connect("localhost", "root", "", "shop")
             ?>
             <a href="info-page.html?id=<?php echo $row["book_id"]; ?>">
                 <div class="card">
-                    <img src="images/covers/<?php echo $row["cover_path"]; ?>.jpg" class="card-image">
+                    <div class="card-image" style="background-image: url('images/covers/<?php echo $row["cover_path"]; ?>.jpg');">
+                    </div>
                     <div class="card-text-container">
                         <p class="card-text"><?php echo $row["name"]; ?></p>
                     </div>
