@@ -1,4 +1,5 @@
-@import url('index.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
 body,
 h1,
 h2,
@@ -6,27 +7,142 @@ h3,
 h4,
 p,
 a {
-  margin: 0;
-  font-size: 100%;
-  font-weight: normal;
+    margin: 0;
+    font-size: 100%;
+    font-weight: normal;
+    text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+:root {
+    --main-text-color: white;
+    --background-color: #b6c9d3;
+    --sub-color: #00446b;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto';
+    background-color: var(--background-color);
+    font-weight: 300;
+    color: var(--main-text-color);
+}
+
+.header {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--sub-color);
+}
+
+.header-image {
+    width: 210px;
+}
+
+.nav {
+    list-style-type: none;
+}
+
+.nav-item {
+    display: inline;
+    padding: 5px;
+    font-size: 24px;
+}
+
+.nav-text {
+    font-family: 'Roboto';
+    font-weight: 300;
+    color: var(--main-text-color);
+}
+
+.nav-text:visited {
+    color: var(--main-text-color);
+    text-decoration: none;
+}
+
+.login-popup {
+    visibility: hidden;
+    transition: visibility 0.2s linear, opacity 0.2s linear;
+    width:210px;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    position: absolute;
+    padding: 15px;
+    top: 15px;
+    left: 80%;
+    z-index: 10;
+    border-radius: 10%;
+}
+
+.login-popup .close-button {
+    position: absolute;
+    top: 17px;
+    right: 15px;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.login-popup .form h2 {
+    text-align: center;
+    color: #222;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.form-element {
+    margin: 15px 0px;
+}
+.form-element label {
+    font-size: 14px;
+    color: #222;
+}
+
+.form-element input[type="text"],
+.form-element input[type="password"] {
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    padding: 5px;
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.form-element .form-button{
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background-color: #7DEA93;
+    color: #0C6D20;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.show-login {
+    width: 130px;
+    height: 40px;
+    padding-top: 10px;
+    border: 1px solid white;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: visibility 0.2s linear, opacity 0.2s linear;
 }
 
 body {
   color: black;
 }
 
-#header {
-  height: 150px;
-  border: 1px solid black;
-  margin-bottom: 20px;
-}
-
-#content {
-  border: 1px solid black;
+.content {
   margin-bottom: 20px;
   display: flex;
   align-items: flex-start;
@@ -35,19 +151,7 @@ body {
   justify-content: center;
 }
 
-#nav {
-  margin-top: 20px;
-  padding: 10px 0px 5px 0px;
-}
-
-#menu {
-    width: 200px;
-    height: 100%;
-    margin-left: 20px; 
-    border: 1px solid black;
-}
-
-#item-info {
+.item-info {
     display: flex;
     flex-direction: column;
     border: 1px solid black;
@@ -55,31 +159,41 @@ body {
     width: 1000px;
 }
 
-#main-text {
+.main-text {
     height: 25%;
     text-align: center;
 }
 
-#desc {
+.desc {
     height: 75%;
     border: 1px solid black;
     display: flex;
 }
 
-#desc-image {
+.desc-image {
     height: 200px;
     width: 300px;
 }
 
-#desc-text {
+.desc-text {
     border: 1px solid black;
 }
 
-.nav-item {
-  display: inline;
-  padding: 5px;
+.footer {
+  display: flex;
+  height: 200px;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--sub-color);
 }
 
-h2 {
-    text-align: center;
+.footer-image {
+  height: 100%;
+}
+
+.footer-text {
+  font-size: 24px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  color: var(--main-text-color);
 }

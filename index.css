@@ -34,8 +34,7 @@ body {
     color: var(--main-text-color);
 }
 
-#header {
-    height: 150px;
+.header {
     margin-bottom: 40px;
     display: flex;
     justify-content: space-around;
@@ -43,7 +42,7 @@ body {
     background-color: var(--sub-color);
 }
 
-#header-image {
+.header-image {
     width: 210px;
 }
 
@@ -68,20 +67,92 @@ body {
     text-decoration: none;
 }
 
-#reg-form {
+.login-popup {
+    visibility: hidden;
+    transition: visibility 0.2s linear, opacity 0.2s linear;
     width:210px;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    position: absolute;
+    padding: 15px;
+    top: 15px;
+    left: 80%;
+    z-index: 10;
+    border-radius: 10%;
 }
 
-#content {
+.login-popup .close-button {
+    position: absolute;
+    top: 17px;
+    right: 15px;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.login-popup .form h2 {
+    text-align: center;
+    color: #222;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.form-element {
+    margin: 15px 0px;
+}
+.form-element label {
+    font-size: 14px;
+    color: #222;
+}
+
+.form-element input[type="text"],
+.form-element input[type="password"] {
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    padding: 5px;
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.form-element .form-button{
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background-color: #7DEA93;
+    color: #0C6D20;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.show-login {
+    width: 130px;
+    height: 40px;
+    padding-top: 10px;
+    border: 1px solid white;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: visibility 0.2s linear, opacity 0.2s linear;
+}
+
+.content {
     margin-bottom: 20px;
     display: flex;
     align-items: flex-start;
 }
 
-#left-sidebar {
+.left-sidebar {
     position: sticky;
     top: 50px;
-    width: 250px;
+    width: 200px;
+    min-width: 200px;
     background-color: #86a2b97a;
     border-radius: 10px;
     margin-right: 40px;
@@ -89,7 +160,7 @@ body {
     margin-left: 100px;
 }
 
-#filter-title-box {
+.filter-title-box {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     padding-top: 10px;
@@ -98,11 +169,11 @@ body {
     margin-bottom: 20px;
 }
 
-#filter-title {
+.filter-title {
     text-align: center;
 }
 
-#genre-list {
+.genre-list {
     list-style-type: none;
     padding: 0;
     margin: 0 15px 15px;
@@ -125,16 +196,23 @@ body {
     text-decoration: underline;
 }
 
-#cards {
+.clear-filters-button {
+    text-align: right;
+}
+
+.cards {
     display: flex;
     flex-wrap: wrap;
     margin-right: 10px;
-    gap: 100px;
 }
-
 
 :root {
 	--card-round-radius: 9px;
+}
+
+.card-container {
+    margin-right: 100px;
+    margin-bottom: 100px;
 }
 
 .card {
@@ -171,6 +249,7 @@ body {
     height: 35px;
     text-overflow: ellipsis;
     overflow: hidden;
+    margin-bottom: 5px;
 }
 
 .card-text {
@@ -179,17 +258,23 @@ body {
     font-size: 15px;
 }
 
+.card-price-container {
+    height: 25px;
+}
+
 .card-price {
     text-align: right;
     color: #fffb00d7;
     font-weight: bold;
+    position: relative;
+    right: 5px;
 }
 
 .card-button {
     float: right;
 }
 
-#footer {
+.footer {
     display: flex;
     height: 200px;
     justify-content: space-around;
@@ -197,11 +282,11 @@ body {
     background-color: var(--sub-color);
 }
 
-#footer-image {
+.footer-image {
     height: 100%;
 }
 
-#footer-text {
+.footer-text {
     font-size: 24px;
     font-family: 'Roboto';
     font-weight: bold;
