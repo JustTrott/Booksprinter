@@ -19,7 +19,9 @@ a {
     --sub-color: #00446b;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -50,6 +52,7 @@ body {
     display: inline;
     padding: 5px;
     font-size: 24px;
+    margin-right: 10px;
 }
 
 .nav-text {
@@ -66,7 +69,7 @@ body {
 .login-popup {
     visibility: hidden;
     transition: visibility 0.2s linear, opacity 0.2s linear;
-    width:210px;
+    width: 210px;
     border: 1px solid black;
     background-color: white;
     color: black;
@@ -99,6 +102,7 @@ body {
 .form-element {
     margin: 15px 0px;
 }
+
 .form-element label {
     font-size: 14px;
     color: #222;
@@ -115,7 +119,7 @@ body {
     border-radius: 5px;
 }
 
-.form-element .form-button{
+.form-element .form-button {
     width: 100%;
     height: 40px;
     border: none;
@@ -138,25 +142,19 @@ body {
     transition: visibility 0.2s linear, opacity 0.2s linear;
 }
 
-body {
-  color: black;
-}
-
 .content {
-  margin-bottom: 20px;
-  display: flex;
-  align-items: flex-start;
-  height: 300px;
-  width: 100%;
-  justify-content: center;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    justify-content: center;
 }
 
 .item-info {
     display: flex;
     flex-direction: column;
     border: 1px solid black;
-    height: 100%;
-    width: 1000px;
+    width: 50%;
 }
 
 .main-text {
@@ -171,8 +169,6 @@ body {
 }
 
 .desc-image {
-    height: 200px;
-    width: 300px;
 }
 
 .desc-text {
@@ -180,20 +176,20 @@ body {
 }
 
 .footer {
-  display: flex;
-  height: 200px;
-  justify-content: space-around;
-  align-items: center;
-  background-color: var(--sub-color);
+    display: flex;
+    height: 200px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--sub-color);
 }
 
 .footer-image {
-  height: 100%;
+    height: 100%;
 }
 
 .footer-text {
-  font-size: 24px;
-  font-family: 'Roboto';
-  font-weight: bold;
-  color: var(--main-text-color);
+    font-size: 24px;
+    font-family: 'Roboto';
+    font-weight: bold;
+    color: var(--main-text-color);
 }

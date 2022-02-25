@@ -125,7 +125,7 @@ $conn = mysqli_connect("localhost", "root", "", "shop");
         </nav>
         <p class="footer-text">Made with Love❤️</p>
     </div>
-    <script src="script.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>

@@ -58,7 +58,7 @@ if(!isset($_GET['id'])){
         <div class="show-login">Log in</div>
     </header>
     <section class="content">
-            <?php 
+        <?php 
             $query = "SELECT description, name, price, cover_path FROM books WHERE book_id={$_GET['id']}";
             $result = mysqli_query($conn, $query);
             $row = mysqli_fetch_array($result);
@@ -67,10 +67,14 @@ if(!isset($_GET['id'])){
             <div class="main-text"><?php echo $row['name']; ?></div>
             <div class="desc">
                 <div class="main-image">
-                    <img src="images/covers/<?php echo $row['cover_path']; ?>.jpg"
-                        class="desc-image" alt="<?php echo $row['name']; ?> COVER">
+                    <img src="images/covers/<?php echo $row['cover_path']; ?>.jpg" class="desc-image"
+                        alt="<?php echo $row['name']; ?> COVER">
                 </div>
                 <div class="desc-text"><?php echo $row['description']; ?></p>
+                </div>
+                <div class="buy-container">
+                    <div class="price"><?php echo $row['price'] ?></div>
+                    <div class="buy-button">Buy</div>
                 </div>
             </div>
         </div>
