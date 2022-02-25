@@ -18,6 +18,16 @@ function show_hide_element(element) {
     }
 }
 
+function add_opace_on_hover(element, valueOnHover, valueOffHover) {
+    element.addEventListener('mouseenter', function() {
+        element.style.opacity = valueOnHover;
+    })
+    
+    element.addEventListener('mouseleave', function() {
+        element.style.opacity = valueOffHover;
+    })
+}
+
 showLoginButton.addEventListener('click', function() {
     show_hide_element(showLoginButton);
     show_hide_element(loginPopup);
@@ -28,10 +38,8 @@ closeButton.addEventListener('click', function() {
     show_hide_element(loginPopup);
 })
 
-showLoginButton.addEventListener('mouseenter', function() {
-    showLoginButton.style.opacity = 0.5;
-})
+add_opace_on_hover(showLoginButton, 0.5, 1)
 
-showLoginButton.addEventListener('mouseleave', function() {
-    showLoginButton.style.opacity = 1;
-})
+let buyButton = document.querySelector('.buy-button')
+
+add_opace_on_hover(buyButton, 0.5, 1)

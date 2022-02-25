@@ -1,148 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
-
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-a {
-    margin: 0;
-    font-size: 100%;
-    font-weight: normal;
-    text-decoration: none;
-}
-
-input {
-    appearance: none;
-}
-
-:root {
-    --main-text-color: white;
-    --background-color: #b6c9d3;
-    --sub-color: #00446b;
-}
-
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Roboto';
-    background-color: var(--background-color);
-    font-weight: 300;
-    color: var(--main-text-color);
-}
-
-.header {
-    margin-bottom: 40px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: var(--sub-color);
-}
-
-.header-image {
-    width: 210px;
-}
-
-.nav {
-    list-style-type: none;
-}
-
-.nav-item {
-    display: inline;
-    padding: 5px;
-    font-size: 24px;
-    margin-right: 10px;
-}
-
-.nav-text {
-    font-family: 'Roboto';
-    font-weight: 300;
-    color: var(--main-text-color);
-}
-
-.nav-text:visited {
-    color: var(--main-text-color);
-    text-decoration: none;
-}
-
-.login-popup {
-    visibility: hidden;
-    transition: visibility 0.2s linear, opacity 0.2s linear;
-    width:210px;
-    border: 1px solid black;
-    background-color: white;
-    color: black;
-    position: absolute;
-    padding: 15px;
-    top: 15px;
-    left: 80%;
-    z-index: 10;
-    border-radius: 10%;
-}
-
-.login-popup .close-button {
-    position: absolute;
-    top: 17px;
-    right: 15px;
-    width: 15px;
-    height: 15px;
-    line-height: 15px;
-    font-size: 1.25rem;
-    cursor: pointer;
-}
-
-.login-popup .form h2 {
-    text-align: center;
-    color: #222;
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.form-element {
-    margin: 15px 0px;
-}
-.form-element label {
-    font-size: 14px;
-    color: #222;
-}
-
-.form-element input[type="text"],
-.form-element input[type="password"] {
-    margin-top: 5px;
-    display: block;
-    width: 100%;
-    padding: 5px;
-    outline: none;
-    border: 1px solid #aaa;
-    border-radius: 5px;
-}
-
-.form-element .form-button{
-    width: 100%;
-    height: 40px;
-    border: none;
-    outline: none;
-    font-size: 16px;
-    background-color: #7DEA93;
-    color: #0C6D20;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.show-login {
-    width: 130px;
-    height: 40px;
-    padding-top: 10px;
-    border: 1px solid white;
-    text-align: center;
-    font-size: 16px;
-    cursor: pointer;
-    transition: visibility 0.2s linear, opacity 0.2s linear;
-}
-
 .content {
     margin-bottom: 20px;
     display: flex;
@@ -184,13 +39,8 @@ body {
     margin-top: 10px;
 }
 
-.genre-item {
-    color: #20598b;
-    
-}
-
 .genre-item>a {
-    color: inherit;
+    color: #20598b;
 }
 
 .genre-item:hover {
@@ -204,7 +54,6 @@ body {
 .cards {
     display: flex;
     flex-wrap: wrap;
-    margin-right: 10px;
 }
 
 :root {
@@ -213,7 +62,7 @@ body {
 
 .card-container {
     margin-right: 100px;
-    margin-bottom: 100px;
+    margin-bottom: 120px;
 }
 
 .card {
@@ -225,13 +74,11 @@ body {
     position: relative;
     box-shadow: 3px 3px 5px 3px #022a3f;
     background-color: #00446b;
-    margin-bottom: 20px;
     bottom: 0px;
     transition: 0.3s;
 }
 
 .card:hover {
-    cursor: pointer;
     bottom: 20px;
 }
 
@@ -247,6 +94,7 @@ body {
 }
 
 .card-text-container {
+    padding: 0px 5px 0px;
     height: 35px;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -260,6 +108,7 @@ body {
 }
 
 .card-price-container {
+    padding-right: 5px;
     height: 25px;
 }
 
@@ -267,29 +116,4 @@ body {
     text-align: right;
     color: #fffb00d7;
     font-weight: bold;
-    position: relative;
-    right: 5px;
-}
-
-.card-button {
-    float: right;
-}
-
-.footer {
-    display: flex;
-    height: 200px;
-    justify-content: space-around;
-    align-items: center;
-    background-color: var(--sub-color);
-}
-
-.footer-image {
-    height: 100%;
-}
-
-.footer-text {
-    font-size: 24px;
-    font-family: 'Roboto';
-    font-weight: bold;
-    color: var(--main-text-color);
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 22, 2022 at 07:50 PM
+-- Generation Time: Feb 25, 2022 at 07:43 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -60,6 +60,26 @@ CREATE TABLE `books_genres` (
   `genre_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `books_genres`
+--
+
+INSERT INTO `books_genres` (`entry_id`, `book_id`, `genre_id`) VALUES
+(1, 1, 1),
+(2, 1, 3),
+(3, 2, 1),
+(4, 2, 6),
+(5, 3, 3),
+(6, 3, 6),
+(7, 4, 2),
+(8, 4, 3),
+(9, 6, 6),
+(10, 6, 3),
+(11, 5, 2),
+(12, 5, 1),
+(13, 7, 4),
+(14, 7, 5);
+
 -- --------------------------------------------------------
 
 --
@@ -71,6 +91,18 @@ CREATE TABLE `genres` (
   `genre_name` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `genres`
+--
+
+INSERT INTO `genres` (`genre_id`, `genre_name`) VALUES
+(1, 'Fantasy'),
+(2, 'Romance'),
+(3, 'Comedy'),
+(4, 'Action'),
+(5, 'Drama'),
+(6, 'Adventure');
+
 -- --------------------------------------------------------
 
 --
@@ -81,9 +113,18 @@ CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
   `login` varchar(20) NOT NULL,
   `password` varchar(30) NOT NULL,
-  `email` varchar(40) NOT NULL,
-  `gender` varchar(10) NOT NULL
+  `email` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `login`, `password`, `email`) VALUES
+(1, 'log', '123', 'in'),
+(2, 'in', '123', 'log'),
+(3, 'brute', '123', 'force'),
+(4, 'force', '123', 'brute');
 
 --
 -- Indexes for dumped tables
@@ -130,19 +171,19 @@ ALTER TABLE `books`
 -- AUTO_INCREMENT for table `books_genres`
 --
 ALTER TABLE `books_genres`
-  MODIFY `entry_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `entry_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `genres`
 --
 ALTER TABLE `genres`
-  MODIFY `genre_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `genre_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables

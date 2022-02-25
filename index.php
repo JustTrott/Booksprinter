@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <?php
 $conn = mysqli_connect("localhost", "root", "", "shop");
+if (isset($_GET['reg']) && $_GET['reg'] == 'success') {
+    echo ("<script>alert('Register was succesfull! Returning to homepage...')</script>");
+}
 ?>
 
 <html>
-
-<head>
+    
+    <head>
     <title>Booksprinter</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" type="text/css" href="index.css">
     <link rel="icon" href="favicon.ico">
+    <?php
+    if (isset($_POST['submit-login'])) {
+        $login = $_POST['login'];
+        $password = $_POST['password'];
+        $query = "SELECT * FROM users WHERE login='$login'";
+        $result = mysqli_query($conn, $query);
+        $row = mysqli_fetch_array($result);
+        if ($row['password'] == $password) {
+            $_SESSION['login'] = $login;
+        }
+        else {
+            die('<script>alert("Login or password is incorrect!")</script>');
+        }
+    }
+    ?>
 
 </head>
 
@@ -26,10 +45,7 @@ $conn = mysqli_connect("localhost", "root", "", "shop");
                     <a href="index.php" class="nav-text">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Registration.php" class="nav-text">Registration</a>
-                </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-text">About</a>
+                    <a href="registration.php" class="nav-text">Registration</a>
                 </li>
             </ul>
         </nav>
@@ -47,7 +63,7 @@ $conn = mysqli_connect("localhost", "root", "", "shop");
                         <input type="password" name="password" placeholder="Enter password">
                     </div>
                     <div class="form-element">
-                        <input class="form-button" type="submit" value="Log in">
+                        <input class="form-button" type="submit" name="submit-login" value="Log in">
                     </div>
                 </form>
             </div>
@@ -116,7 +132,7 @@ $conn = mysqli_connect("localhost", "root", "", "shop");
                     <a href="index.php" class="nav-text">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Registration.php" class="nav-text">Registration</a>
+                    <a href="registration.php" class="nav-text">Registration</a>
                 </li>
                 <li class="nav-item">
                     <a href="about.html" class="nav-text">About</a>
@@ -125,6 +141,21 @@ $conn = mysqli_connect("localhost", "root", "", "shop");
         </nav>
         <p class="footer-text">Made with Love❤️</p>
     </div>
+    <?php
+    if (isset($_SESSION['login'])) {
+        $login = $_SESSION['login'];
+        echo "<script>
+        let showLoginButton = document.querySelector('.show-login');
+
+        let newNode = document.createElement('div');
+
+        newNode.class = 'nav-text';
+        newNode.innerHTML = 'Hello, {$login}!';
+        showLoginButton.parentNode.replaceChild(newNode, showLoginButton);
+        </script>";
+    }
+    
+    ?>
     <script src="index.js"></script>
 </body>
 

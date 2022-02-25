@@ -13,6 +13,7 @@ if(!isset($_GET['id'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" type="text/css" href="info-page.css">
     <link rel="icon" href="favicon.ico">
 
@@ -29,10 +30,7 @@ if(!isset($_GET['id'])){
                     <a href="index.php" class="nav-text">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Registration.php" class="nav-text">Registration</a>
-                </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-text">About</a>
+                    <a href="registration.php" class="nav-text">Registration</a>
                 </li>
             </ul>
         </nav>
@@ -50,7 +48,7 @@ if(!isset($_GET['id'])){
                         <input type="password" name="password" placeholder="Enter password">
                     </div>
                     <div class="form-element">
-                        <input class="form-button" type="submit" value="Log in">
+                        <input class="form-button" type="submit" name="submit-login" value="Log in">
                     </div>
                 </form>
             </div>
@@ -70,13 +68,16 @@ if(!isset($_GET['id'])){
                     <img src="images/covers/<?php echo $row['cover_path']; ?>.jpg" class="desc-image"
                         alt="<?php echo $row['name']; ?> COVER">
                 </div>
-                <div class="desc-text"><?php echo $row['description']; ?></p>
-                </div>
-                <div class="buy-container">
-                    <div class="price"><?php echo $row['price'] ?></div>
-                    <div class="buy-button">Buy</div>
+                <div class="wrapper">
+                    <div class="desc-text"><?php echo $row['description']; ?></p>
+                    </div>
+                    <div class="buy-container">
+                        <div class="price">US $<?php echo $row['price'] ?></div>
+                        <div class="buy-button" onclick="alert('The item has been ordered succesfully!');">Buy</div>
+                    </div>
                 </div>
             </div>
+
         </div>
     </section>
     <div class="footer">
@@ -87,7 +88,7 @@ if(!isset($_GET['id'])){
                     <a href="index.php" class="nav-text">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Registration.php" class="nav-text">Registration</a>
+                    <a href="registration.php" class="nav-text">Registration</a>
                 </li>
                 <li class="nav-item">
                     <a href="about.html" class="nav-text">About</a>
@@ -96,7 +97,7 @@ if(!isset($_GET['id'])){
         </nav>
         <p class="footer-text">Made with Love❤️</p>
     </div>
-    <script src="script.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>
