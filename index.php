@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <?php
 $conn = mysqli_connect("localhost", "root", "", "shop");
@@ -133,9 +136,6 @@ if (isset($_GET['reg']) && $_GET['reg'] == 'success') {
                 </li>
                 <li class="nav-item">
                     <a href="registration.php" class="nav-text">Registration</a>
-                </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-text">About</a>
                 </li>
             </ul>
         </nav>

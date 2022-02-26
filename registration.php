@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <?php
 $conn = mysqli_connect("localhost", "root", "", "shop");
@@ -91,13 +94,24 @@ $conn = mysqli_connect("localhost", "root", "", "shop");
                 <li class="nav-item">
                     <a href="registration.php" class="nav-text">Registration</a>
                 </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-text">About</a>
-                </li>
             </ul>
         </nav>
         <p class="footer-text">Made with Love❤️</p>
     </div>
+    <?php
+    if (isset($_SESSION['login'])) {
+        $login = $_SESSION['login'];
+        echo "<script>
+        let showLoginButton = document.querySelector('.show-login');
+
+        let newNode = document.createElement('div');
+
+        newNode.class = 'nav-text';
+        newNode.innerHTML = 'Hello, {$login}!';
+        showLoginButton.parentNode.replaceChild(newNode, showLoginButton);
+        </script>";
+    }
+    ?>
     <script src="index.js"></script>
 </body>
 
