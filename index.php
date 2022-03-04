@@ -10,8 +10,8 @@ if (isset($_GET['reg']) && $_GET['reg'] == 'success') {
 ?>
 
 <html>
-    
-    <head>
+
+<head>
     <title>Booksprinter</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,8 +39,8 @@ if (isset($_GET['reg']) && $_GET['reg'] == 'success') {
 
 <body>
     <?php include('header.html'); ?>
-    <section class="content">
 
+    <section class="content">
         <aside class="left-sidebar">
             <div class="filter-title-box">
                 <h3 class="filter-title">Filter by: Genre</h3>
@@ -93,23 +93,30 @@ if (isset($_GET['reg']) && $_GET['reg'] == 'success') {
             ?>
         </div>
     </section>
+    <section class="tips">
+        <div class="video-plug">
+            <h1 class="video-header">Need some help?</h1>
+            <p class="video-subheader">Here's some video that may help you to chose which Light Novel to start with!</p>
+            <iframe class="video-embed" src="https://www.youtube.com/embed/-cXIcyfPJ_0" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    </section>
     <?php include('footer.html'); ?>
     <?php
     if (isset($_SESSION['login'])) {
         $login = $_SESSION['login'];
-        echo "<script>
-        let showLoginButton = document.querySelector('.show-login');
-
-        let newNode = document.createElement('div');
-
-        newNode.class = 'nav-text';
-        newNode.innerHTML = 'Hello, {$login}!';
-        showLoginButton.parentNode.replaceChild(newNode, showLoginButton);
-        </script>";
-    }
-    
     ?>
-    <script src="index.js"></script>
+    <script>
+        let showLoginButton1 = document.querySelector('.show-login');
+        let newNode = document.createElement('div');
+        newNode.class = 'nav-text';
+        newNode.innerHTML = 'Hello, <?php echo $login ?>!';
+        showLoginButton.parentNode.replaceChild(newNode, showLoginButton1);
+    </script>
+    <?php }
+    ?>
 </body>
 
 </html>

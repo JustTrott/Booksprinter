@@ -53,16 +53,15 @@ if(!isset($_GET['id'])){
     <?php
     if (isset($_SESSION['login'])) {
         $login = $_SESSION['login'];
-        echo "<script>
-        let showLoginButton = document.querySelector('.show-login');
-
+    ?>
+    <script>
+        let showLoginButton1 = document.querySelector('.show-login');
         let newNode = document.createElement('div');
-
         newNode.class = 'nav-text';
-        newNode.innerHTML = 'Hello, {$login}!';
-        showLoginButton.parentNode.replaceChild(newNode, showLoginButton);
-        </script>";
-    }
+        newNode.innerHTML = 'Hello, <?php echo $login ?>!';
+        showLoginButton.parentNode.replaceChild(newNode, showLoginButton1);
+    </script>
+    <?php }
     ?>
 </body>
 
