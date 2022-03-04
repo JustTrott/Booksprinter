@@ -39,7 +39,3 @@ closeButton.addEventListener('click', function() {
 })
 
 add_opace_on_hover(showLoginButton, 0.5, 1)
-
-let buyButton = document.querySelector('.buy-button')
-
-add_opace_on_hover(buyButton, 0.5, 1)

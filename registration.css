@@ -51,6 +51,7 @@
     color: #0C6D20;
     border-radius: 10px;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 .registration .form-element .form-button:hover{

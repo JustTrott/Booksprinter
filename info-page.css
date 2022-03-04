@@ -56,7 +56,12 @@
     font-size: 20px;
     font-weight: 500;
     cursor: pointer;
-    transition: opacity 0.2s linear;
+    transition: 0.2s;
+    border: 1px solid #0C6D20;
+}
+
+.buy-button:hover {
+    background-color: #5caf6c;
 }
 
 .desc-image {

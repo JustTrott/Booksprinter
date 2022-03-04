@@ -23,41 +23,7 @@ if(!isset($_GET['id'])){
 </head>
 
 <body>
-    <header class="header">
-        <a href="index.php">
-            <img src="images/logo_with_text_hor.png" alt="Booksprinter" class="header-image">
-        </a>
-        <nav class="nav">
-            <ul>
-                <li class="nav-item">
-                    <a href="index.php" class="nav-text">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="registration.php" class="nav-text">Registration</a>
-                </li>
-            </ul>
-        </nav>
-        <div class="login-popup">
-            <div class="close-button">&times;</div>
-            <div class="form">
-                <h2>Log in</h2>
-                <form action="index.php" method="POST">
-                    <div class="form-element">
-                        <label for="login">Username:</label>
-                        <input type="text" name="login" placeholder="Enter username">
-                    </div>
-                    <div class="form-element">
-                        <label for="password">Password:</label>
-                        <input type="password" name="password" placeholder="Enter password">
-                    </div>
-                    <div class="form-element">
-                        <input class="form-button" type="submit" name="submit-login" value="Log in">
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="show-login">Log in</div>
-    </header>
+    <?php include('header.html'); ?>
     <section class="content">
         <?php 
             $query = "SELECT description, name, price, cover_path FROM books WHERE book_id={$_GET['id']}";
@@ -83,20 +49,7 @@ if(!isset($_GET['id'])){
 
         </div>
     </section>
-    <div class="footer">
-        <img src="images/logo_with_text.png" class="footer-image">
-        <nav class="nav">
-            <ul>
-                <li class="nav-item">
-                    <a href="index.php" class="nav-text">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="registration.php" class="nav-text">Registration</a>
-                </li>
-            </ul>
-        </nav>
-        <p class="footer-text">Made with Love❤️</p>
-    </div>
+    <?php include('footer.html'); ?>
     <?php
     if (isset($_SESSION['login'])) {
         $login = $_SESSION['login'];
@@ -111,7 +64,6 @@ if(!isset($_GET['id'])){
         </script>";
     }
     ?>
-    <script src="index.js"></script>
 </body>
 
 </html>
