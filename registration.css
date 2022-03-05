@@ -30,7 +30,8 @@
 }
 
 .registration .form-element input[type="text"],
-.registration .form-element input[type="password"] {
+.registration .form-element input[type="password"],
+.registration .form-element input[type="email"] {
     margin-top: 10px;
     display: block;
     width: 100%;
