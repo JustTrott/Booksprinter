@@ -70,6 +70,7 @@ $conn = mysqli_connect("localhost", "root", "", "shop");
 </html>
 
 <?php
+// registration of a new user
 if (isset($_POST['submit-reg'])) {
     if ($_POST['login'] == "" || $_POST['email'] == "" || $_POST['password'] == "" || $_POST['r-password'] == "") {
         die("<script>alert('Not all fields were filled!')</script>");

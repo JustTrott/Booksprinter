@@ -3,9 +3,11 @@ session_start();
 ?>
 <!DOCTYPE html>
 <?php
+// database connection
 $conn = mysqli_connect("localhost", "root", "", "shop");
+// display a message if the page was a result of a redirection from registration page
 if (isset($_GET['reg']) && $_GET['reg'] == 'success') {
-    echo ("<script>alert('Register was succesfull! Returning to homepage...')</script>");
+    echo ("<script>alert('Register was succesfull! You've been returned to the homepage.')</script>");
 }
 ?>
 
@@ -47,6 +49,7 @@ if (isset($_GET['reg']) && $_GET['reg'] == 'success') {
             </div>
             <ul class="genre-list">
                 <?php
+                // fetching the array of genres from the database
                 $query = "SELECT genre_name FROM genres ORDER BY genre_name ASC";
                 $result = mysqli_query($conn, $query);
                 while($row = mysqli_fetch_array($result)) {
@@ -64,6 +67,7 @@ if (isset($_GET['reg']) && $_GET['reg'] == 'success') {
         </aside>
         <div class="cards">
             <?php
+            // determine the query based on the chosen genre
             if(isset($_GET['genre'])){
                 $query = "SELECT books.book_id, books.name, books.cover_path, books.price 
                 FROM books, genres, books_genres
@@ -72,19 +76,45 @@ if (isset($_GET['reg']) && $_GET['reg'] == 'success') {
             else{
                 $query = "SELECT book_id, name, cover_path, price FROM books";
             }
+            // a quicksort implementation to sort query results alphabetically based on their name
             $result = mysqli_query($conn, $query);
-            while($row = mysqli_fetch_array($result)) {
+            function quick_sort($my_array)
+            {
+                $loe = $gt = array();
+                if(count($my_array) < 2)
+                {
+                    return $my_array;
+                }
+                $pivot_key = key($my_array);
+                $pivot = array_shift($my_array);
+                foreach($my_array as $elem)
+                {
+                    if($elem["name"] <= $pivot["name"])
+                    {
+                        $loe[] = $elem;
+                    }
+                    else
+                    {
+                        $gt[] = $elem;
+                    }
+                }
+                return array_merge(quick_sort($loe),array($pivot_key=>$pivot),quick_sort($gt));
+            }
+            $books = mysqli_fetch_all($result, MYSQLI_ASSOC);
+            $sorted_books = quick_sort($books);
+            // item card generation by looping through array of sorted books
+            foreach($sorted_books as $book) {
             ?>
-            <a class="card-container" href="info-page.php?id=<?php echo $row["book_id"]; ?>">
+            <a class="card-container" href="info-page.php?id=<?php echo $book["book_id"]; ?>">
                 <div class="card">
                     <div class="card-image"
-                        style="background-image: url('images/covers/<?php echo $row["cover_path"]; ?>.jpg');">
+                        style="background-image: url('images/covers/<?php echo $book["cover_path"]; ?>.jpg');">
                     </div>
                     <div class="card-text-container">
-                        <p class="card-text"><?php echo $row["name"]; ?></p>
+                        <p class="card-text"><?php echo $book["name"]; ?></p>
                     </div>
                     <div class="card-price-container">
-                        <p class="card-price">US $<?php echo $row["price"] ?></p>
+                        <p class="card-price">US $<?php echo $book["price"] ?></p>
                     </div>
                 </div>
             </a>
@@ -105,6 +135,7 @@ if (isset($_GET['reg']) && $_GET['reg'] == 'success') {
     </section>
     <?php include('footer.html'); ?>
     <?php
+    // display a login message if the user is logged in
     if (isset($_SESSION['login'])) {
         $login = $_SESSION['login'];
     ?>

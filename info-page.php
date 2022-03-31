@@ -4,6 +4,7 @@ session_start();
 <!DOCTYPE html>
 <?php
 $conn = mysqli_connect("localhost", "root", "", "shop");
+// redirect to the homepage if item id is not specified, happens if user is trying to access the info page directly
 if(!isset($_GET['id'])){
     header('Location: index.php');
 }
