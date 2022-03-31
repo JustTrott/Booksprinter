@@ -30,19 +30,19 @@ $conn = mysqli_connect("localhost", "root", "", "shop");
                 <form action="registration.php" method="POST">
                     <div class="form-element">
                         <label for="login">Username:</label>
-                        <input type="text" name="login" placeholder="Enter username">
+                        <input type="text" name="login" placeholder="Enter username" required>
                     </div>
                     <div class="form-element">
                         <label for="email">E-mail:</label>
-                        <input type="text" name="email" placeholder="Enter email">
+                        <input type="email" name="email" placeholder="Enter email" required>
                     </div>
                     <div class="form-element">
                         <label for="password">Password:</label>
-                        <input type="password" name="password" placeholder="Enter password">
+                        <input type="password" name="password" placeholder="Enter password" required>
                     </div>
                     <div class="form-element">
                         <label for="r_password">Repeat password:</label>
-                        <input type="password" name="r-password" placeholder="Repeat password">
+                        <input type="password" name="r-password" placeholder="Repeat password" required>
                     </div>
                     <div class="form-element">
                         <input class="form-button" type="submit" name="submit-reg" value="Sign up">
@@ -72,9 +72,6 @@ $conn = mysqli_connect("localhost", "root", "", "shop");
 <?php
 // registration of a new user
 if (isset($_POST['submit-reg'])) {
-    if ($_POST['login'] == "" || $_POST['email'] == "" || $_POST['password'] == "" || $_POST['r-password'] == "") {
-        die("<script>alert('Not all fields were filled!')</script>");
-    }
     $login = $_POST['login'];
     $email = $_POST['email'];
     $password = $_POST['password'];
